@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Humblee Trees – Username Reservation</title>
+  <link rel="stylesheet" href="style.css"/>
+  <script>
+    // Set this to your backend API base. During local dev, use: http://localhost:3000
+    window.API_BASE = "https://api.YOURDOMAIN.com";
+  </script>
+</head>
+<body>
+  <main class="container">
+    <header>
+      <h1>Humblee Trees</h1>
+      <p>Create your username</p>
+    </header>
+
+    <section class="card">
+      <form id="reserveForm">
+        <label for="username">Choose a username</label>
+        <input id="username" name="username" type="text" minlength="3" maxlength="20"
+               placeholder="e.g., humblee_dev" required pattern="[A-Za-z0-9_-]{3,20}" />
+        <button type="submit">Reserve</button>
+      </form>
+      <p id="msg" class="msg"></p>
+    </section>
+
+    <section class="card">
+      <h2>Latest usernames</h2>
+      <ul id="list" class="list"></ul>
+      <button id="refresh">Refresh</button>
+    </section>
+
+    <footer>
+      <small>© <span id="year"></span> Humblee Trees • Username service</small>
+    </footer>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
